@@ -1,4 +1,4 @@
-//Requires node.js and mqtt library installed.
+// Requires node.js and mqtt library installed.
 var mqtt = require('mqtt');
 var os = require("os");
 
@@ -105,7 +105,7 @@ function random() {
     return Math.floor(Math.random() * 1000);
 }
 
-//Catches ctrl+c event
+// Catches ctrl+c event
 process.on('SIGINT', function () {
     console.log();
     console.log('Disconnecting...');
@@ -114,7 +114,7 @@ process.on('SIGINT', function () {
     process.exit(2);
 });
 
-//Catches uncaught exceptions
+// Catches uncaught exceptions
 process.on('uncaughtException', function (e) {
     console.log('Uncaught Exception...');
     console.log(e.stack);
