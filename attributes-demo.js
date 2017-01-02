@@ -56,7 +56,7 @@ client.on('message', function (topic, message) {
         }
         if (data.latestFirmwareVersion && data.latestFirmwareVersion != firmwareVersion) {
             // Received new upload frequency configuration
-            console.log('New firmware version is available: %s', data.shared.latestFirmwareVersion);
+            console.log('New firmware version is available: %s', data.latestFirmwareVersion);
         }
     } else if (topic === attributesResponseTopic) {
         // Process response to attributes request
