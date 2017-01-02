@@ -52,7 +52,7 @@ client.on('message', function (topic, message) {
         var data = JSON.parse(message);
         if (data.uploadFrequency && data.uploadFrequency != currentFrequency) {
             // Reschedule upload using new frequency
-            reschedule(data.uploadFrequency);
+            rescheduleStatsUpload(data.uploadFrequency);
         }
         if (data.latestFirmwareVersion && data.latestFirmwareVersion != firmwareVersion) {
             // Received new upload frequency configuration
@@ -73,7 +73,7 @@ client.on('message', function (topic, message) {
         if (data.shared) {
             if (data.shared.uploadFrequency && data.shared.uploadFrequency != currentFrequency) {
                 // Received new upload frequency configuration
-                reschedule(data.shared.uploadFrequency);
+                rescheduleStatsUpload(data.shared.uploadFrequency);
             }
             if (data.shared.latestFirmwareVersion && data.shared.latestFirmwareVersion != firmwareVersion) {
                 // Received new upload frequency configuration
